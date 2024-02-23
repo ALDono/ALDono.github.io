@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon-32x32.png" />
+    <link href="style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Body Mass Index</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <img src="images/logo.svg" alt="logo" width="64px">
+      </header>
+      <section class="first-section">
+        <div class="even-columns">
+          <div class="column bmi-section">
+            <h1 class="fs-heading-40 fw-semi-bold fc-main lh-heading">Body Mass Index Calculator</h1>
+            <p class="fs-body-20 lh-body fc-secondary lh-body"><br><br>Better understand your weight in relation to your height using our 
+              body mass index (BM) calculator. While BMI is not the sole determinant 
+              of a healthy weight, it offers a valuable starting point to evaluate 
+              your overall health and well-being.</p>
+          </div>
+          <div class="column user-input bg-white">
+            <h4 class="fs-heading-10 fc-main fw-semi-bold lh-heading">Enter your details below</h4>
+
+            <form class="radio-list fc-main fw-semi-bold fs-body-20">
+              <!-- radio inputs -->
+              <input id="metric-radio" class="form-radio-input1" type="radio" id="metric" name="measurement-choice" value="Metric" checked="checked">
+              <label for="metric">Metric</label>
+              <input id="imperial-radio" class="form-radio-input2" type="radio" id="imperial" name="measurement-choice" value="Imperial">
+              <label for="imperial">Imperial</label><br>
+            </form>
+            <!-- metric form -->
+            <form class="radio-list fc-main fw-semi-bold fs-body-20" id="metric-visual">
+              <!-- height and weight inputs -->
+              <label for="height" class="input-list fc-secondary fw-regular fs-body-10 input-label">Height</label>
+              <!-- hidden on mobile --><label for="weight" class="tab-input input-list fc-secondary fw-regular fs-body-10 input-label">   Weight</label>
+              <!--metric input--><input autocomplete="off" id="height-input" class="fs-heading-20 fw-semi-bold form-input-1 border" type="number" id="height" name="height" placeholder="cm">
+              <!-- hidden on larger screens --><label for="weight" class="mobile-input input-list fc-secondary fw-regular fs-body-10 input-label">   Weight</label>
+              <!--metric input--><input autocomplete="off" id="weight-input" class="fs-heading-20 fw-semi-bold form-input-1 border" type="number" id="weight" name="weight" placeholder="kg">
+            </form>
+            <!-- imperial form -->
+            <form class="radio-list fc-main fw-semi-bold fs-body-20" id="imperial-visual">
+              <label for="height" class="input-list fc-secondary fw-regular fs-body-10 input-label">Height</label><br><br><br>
+              <input autocomplete="off" id="height-input-imp-ft" class="fs-heading-20 fw-semi-bold form-input-2 border" type="number" id="height" name="height" placeholder="ft">
+              <input autocomplete="off" id="height-input-imp-in" class="fs-heading-20 fw-semi-bold form-input-2 border" type="number" id="height" name="height" placeholder="in">
+              <label for="weight" class="input-list fc-secondary fw-regular fs-body-10 input-label">Weight</label><br><br><br><br>
+              <input autocomplete="off" id="weight-input-imp-st" class="fs-heading-20 fw-semi-bold form-input-2 border" type="number" id="weight" name="weight" placeholder="st">
+              <input autocomplete="off" id="weight-input-imp-lbs" class="fs-heading-20 fw-semi-bold form-input-2 border" type="number" id="weight" name="weight" placeholder="lbs">
+            </form>
+
+
+            <div class="bg-gradient-1 border-radius bmi-result">
+              <div class="bmi-result-left"> 
+                <p class="fs-body-20 fc-white fw-semi-bold">Your BMI is...</p>
+                <p id="bmi-output" class="fs-heading-40 fc-white fw-semi-bold">00.0</p>
+              </div>
+              <div class="bmi-result-right">
+                <p class="fs-body-10 fc-white fw-regular">Your BMI suggests you're <span id="weight-class">-</span><!-- add classification -->.
+                Your ideal weight is between <span class="ideal-weight" id="ideal-weight">-</span>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="second-section">
+        <div class="even-columns">
+          <div class="column second-section-img">
+            <img src="images/image-man-eating.webp" alt="man eating" width="564px">
+          </div>
+          <div class="column second-section-desc">
+            <h2 class="fs-heading-30 fc-main fw-semi-bold lh-heading">What your BMI result means</h2>
+            <p class="fs-body-20 fc-secondary lh-body"><br><br>A BMI range of 18.5 to 24.9 is considered a 'healthy weight.' Maintaining a 
+              healthy weight may lower your chances of experiencing health issues later on, 
+              such as obesity and type 2 diabetes. Aim for a nutritious diet with reduced 
+              fat and sugar content, incorporating ample fruits and vegetables. Additionally, 
+              strive for regular physical activity, ideally about 30 minutes daily for 
+              five days a week.</p>
+          </div>
+        </div>
+      </section>
+      <section class="third-section bg-gradient" >
+        <div class="even-columns-third-section">
+          <div class="third-columns"><img src="images/icon-eating.svg" alt="" width="64px">
+            <h3 class="fs-heading-10 fw-semi-bold fc-main lh-heading">Healthy eating</h3>
+            <p class="fs-body-20 fw-regular fc-secondary">Healthy eating promotes weight control, disease prevention, better digestion, 
+              immunity, mental clarity, and mood.</p>
+          </div>
+          <div class="third-columns">
+            <img src="images/icon-exercise.svg" alt="" width="64px">
+            <h3 class="fs-heading-10 fw-semi-bold fc-main lh-heading">Regular exercise</h3>
+            <p class="fs-body-20 fw-regular fc-secondary">Exercise improves fitness, aids weight control, elevates mood, and reduces disease 
+              risk, fostering wellness and longevity.</p>
+          </div>
+          <div class="third-columns">
+            <img src="images/icon-sleep.svg" alt="" width="64px">
+            <h3 class="fs-heading-10 fw-semi-bold fc-main lh-heading">Adequate sleep</h3>
+            <p class="fs-body-20 fw-regular fc-secondary">Sleep enhances mental clarity, emotional stability, and physical wellness, promoting 
+              overall restoration and rejuvenation.</p>
+          </div>
+        </div>
+      </section>
+      <section class="fourth-section">
+        <div class="fourth-section-desc">
+          <h2 class="fs-heading-30 fc-main fw-semi-bold lh-heading">Limitations of BMI</h2>
+          <p class="fs-body-20 fc-secondary fw-semi-bold">Although BMI is often a practical indicator of healthy weight, it is not suited for 
+            every person. Specific groups should carefully consider their BMI outcomes, and in 
+            certain cases, the measurement may not be beneficial to use.</p>
+        </div>
+        <!-- taken this out so flex works on all groups within this parent -->
+        <!-- <div class="dynamic-boxes"> -->
+          <div class="fourth-section-boxes">
+            <img src="images/icon-gender.svg" alt="">
+            <h4 class="fs-heading-10 fc-main fw-semi-bold lh-heading">Gender</h4>
+            <p class="fs-body-20 fc-secondary fw-regular">The development and body fat composition of girls and boys vary with age. Consequently, 
+              a child's age and gender are considered when evaluating their BMI.</p>
+          </div>
+          <div class="fourth-section-boxes-1">
+            <img src="images/pattern-curved-line-right.svg" alt="">
+          </div>
+          <div class="fourth-section-boxes">
+            <img src="images/icon-age.svg" alt="">
+            <h4 class="fs-heading-10 fc-main fw-semi-bold lh-heading">Age</h4>
+            <p class="fs-body-20 fc-secondary fw-regular">In aging individuals, increased body fat and muscle loss may cause BMI to underestimate 
+    body fat content.</p>
+          </div>
+          <div class="fourth-section-boxes">
+            <img src="images/icon-muscle.svg" alt="">
+            <h4 class="fs-heading-10 fc-main fw-semi-bold lh-heading">Muscle</h4>
+            <p class="fs-body-20 fc-secondary fw-regular">BMI may misclassify muscular individuals as overweight or obese, as it doesn't 
+              differentiate muscle from fat.</p>
+          </div>
+          <div class="fourth-section-boxes">
+            <img src="images/icon-pregnancy.svg" alt="">
+            <h4 class="fs-heading-10 fc-main fw-semi-bold lh-heading">Pregnancy</h4>
+            <p class="fs-body-20 fc-secondary fw-regular">Expectant mothers experience weight gain due to their growing baby. Maintaining a 
+              healthy pre-pregnancy BMI is advisable to minimise health risks for both mother 
+              and child.</p>
+          </div>
+          <div class="fourth-section-boxes">
+            <img src="images/icon-race.svg" alt="">
+            <h4 class="fs-heading-10 fc-main fw-semi-bold lh-heading">Race</h4>
+            <p class="fs-body-20 fc-secondary fw-regular">Certain health concerns may affect individuals of some Black and Asian origins at 
+              lower BMIs than others. To learn more, it is advised to discuss this with your 
+              GP or practice nurse.</p>
+          </div>
+        <!-- </div> -->
+      </section>
+    </div>
+    <footer><p>Copyright 2024 by Aubrey Dono. All Rights Reserved.</p></footer>
+    <script>
+      let measure_type = "metric";
+
+      // radio button event listeners
+
+      document.getElementById("metric-radio").addEventListener("click",function(){
+        measure_type = "metric"
+        document.getElementById("metric-visual").style.display = "inline";
+        document.getElementById("imperial-visual").style.display = "none";
+      })
+
+      document.getElementById("imperial-radio").addEventListener("click",function(){
+        measure_type = "imperial";
+        document.getElementById("metric-visual").style.display = "none";
+        document.getElementById("imperial-visual").style.display = "inline";
+      })
+    
+
+      // metric event listeners
+      //parseInt is in there because I couldn't figure out why my text inputs weren't showing as numbers
+      //needless to say, I figured out that the input needed to be type number. However, I'm going to just leave
+      //the parseInt's in, just because.
+
+      document.getElementById("height-input").addEventListener("keyup",function(){
+          calculateMetric(parseInt(document.getElementById("height-input").value), parseInt(document.getElementById("weight-input").value));
+    })
+
+      document.getElementById("weight-input").addEventListener("keyup",function(){
+          calculateMetric(parseInt(document.getElementById("height-input").value), parseInt(document.getElementById("weight-input").value));
+      })
+
+      //metric click event listeners
+
+      document.getElementById("height-input").addEventListener("click",function(){
+          calculateMetric(parseInt(document.getElementById("height-input").value), parseInt(document.getElementById("weight-input").value));
+      })
+
+      document.getElementById("weight-input").addEventListener("click",function(){
+          calculateMetric(parseInt(document.getElementById("height-input").value), parseInt(document.getElementById("weight-input").value));
+      })
+
+      // Imperial event listeners
+
+      document.getElementById("weight-input-imp-st").addEventListener("keyup",function(){
+        calculateImperial(parseInt(document.getElementById("height-input-imp-ft").value),parseInt(document.getElementById("height-input-imp-in").value),parseInt(document.getElementById("weight-input-imp-st").value),parseInt(document.getElementById("weight-input-imp-lbs").value));
+      })
+
+      document.getElementById("weight-input-imp-lbs").addEventListener("keyup",function(){
+        calculateImperial(parseInt(document.getElementById("height-input-imp-ft").value),parseInt(document.getElementById("height-input-imp-in").value),parseInt(document.getElementById("weight-input-imp-st").value),parseInt(document.getElementById("weight-input-imp-lbs").value));
+      })
+
+      document.getElementById("height-input-imp-ft").addEventListener("keyup",function(){
+        calculateImperial(parseInt(document.getElementById("height-input-imp-ft").value),parseInt(document.getElementById("height-input-imp-in").value),parseInt(document.getElementById("weight-input-imp-st").value),parseInt(document.getElementById("weight-input-imp-lbs").value));
+      })
+
+      document.getElementById("height-input-imp-in").addEventListener("keyup",function(){
+        calculateImperial(parseInt(document.getElementById("height-input-imp-ft").value),parseInt(document.getElementById("height-input-imp-in").value),parseInt(document.getElementById("weight-input-imp-st").value),parseInt(document.getElementById("weight-input-imp-lbs").value));
+      })
+
+      //Imperial click event listeners
+      document.getElementById("weight-input-imp-st").addEventListener("click",function(){
+        calculateImperial(parseInt(document.getElementById("height-input-imp-ft").value),parseInt(document.getElementById("height-input-imp-in").value),parseInt(document.getElementById("weight-input-imp-st").value),parseInt(document.getElementById("weight-input-imp-lbs").value));
+      })
+
+      document.getElementById("weight-input-imp-lbs").addEventListener("click",function(){
+        calculateImperial(parseInt(document.getElementById("height-input-imp-ft").value),parseInt(document.getElementById("height-input-imp-in").value),parseInt(document.getElementById("weight-input-imp-st").value),parseInt(document.getElementById("weight-input-imp-lbs").value));
+      })
+
+      document.getElementById("height-input-imp-ft").addEventListener("click",function(){
+        calculateImperial(parseInt(document.getElementById("height-input-imp-ft").value),parseInt(document.getElementById("height-input-imp-in").value),parseInt(document.getElementById("weight-input-imp-st").value),parseInt(document.getElementById("weight-input-imp-lbs").value));
+      })
+
+      document.getElementById("height-input-imp-in").addEventListener("click",function(){
+        calculateImperial(parseInt(document.getElementById("height-input-imp-ft").value),parseInt(document.getElementById("height-input-imp-in").value),parseInt(document.getElementById("weight-input-imp-st").value),parseInt(document.getElementById("weight-input-imp-lbs").value));
+      })
+
+      //calculation functions
+
+      function calculateMetric(height,weight){
+        let bmi = weight / (Math.pow(height/100,2));
+        //lazy error catch
+        if(bmi > 0 && bmi < 200){
+          document.getElementById("bmi-output").innerHTML = Math.round(bmi * 10)/10;
+          weightClassOutput(bmi);
+          healthyWeight(bmi,height);
+        }
+      }
+
+      function calculateImperial(foot,inch,stone,pound){
+        // window.alert("Calc is working");
+        let height = inch + (foot*12);
+        let weight = pound + (stone*14);
+        let bmi = (weight / (Math.pow(height,2)))*703;
+        console.log("height is "+height+" weight is "+weight+" bmi is "+bmi);
+        //lazy error catch
+        if(bmi > 0 && bmi < 200){
+          document.getElementById("bmi-output").innerHTML = Math.round(bmi * 10)/10;
+          weightClassOutput(bmi);
+          healthyWeight(bmi,height);
+        }
+      }
+
+      function weightClassOutput(bmi){
+        weightClass = document.getElementById("weight-class");
+        switch (true) {
+          case (bmi<18.5):
+            weightClass.innerHTML = "underweight"
+            break;
+          case (bmi>18.4 && bmi<25):
+            weightClass.innerHTML = "a healthy weight"
+            break;
+          case (bmi>24 && bmi<30):
+            weightClass.innerHTML = "currently overweight"
+            break;
+          case (bmi>29.9):
+            weightClass.innerHTML = "obese"
+            break;
+          default:
+          weightClass.innerHTML = "-"
+        }
+      }
+
+      function healthyWeight(bmi,height){
+        let healthyBmiUpper = 24.9;
+        let healthyBmiLower = 18.5;
+        let healthyWeightUpper = 0;
+        let heal
+        //bmi calc
+        // Weight / Height(squared) = BMI
+        // Weight = Height(squared) * BMI
+        // let bmi = (weight / (Math.pow(height,2)))*703;
+
+        if(measure_type == "metric"){
+          healthyWeightUpper = Math.floor(Math.pow(height/100,2)*healthyBmiUpper*10)/10;
+          healthyWeightLower = Math.floor(Math.pow(height/100,2)*healthyBmiLower*10)/10;
+          document.getElementById("ideal-weight").innerHTML = healthyWeightLower+" kg and "+healthyWeightUpper+" kg";
+
+        }else{
+          healthyWeightUpper = Math.floor((((Math.pow(height,2)*healthyBmiUpper)/703))/14*10)/10;
+          healthyWeightLower = Math.floor((((Math.pow(height,2)*healthyBmiLower)/703))/14*10)/10;
+          document.getElementById("ideal-weight").innerHTML = healthyWeightLower+" St and "+healthyWeightUpper+" St";
+        }
+      }
+
+    </script>
+  </body>
+  <!-- To Do -->
+  <!-- Fix Flexi, mostly just the bmi-result box-->
+  <!-- Fix Imperial layout on smaller screens -->
+</html>
